@@ -1,15 +1,138 @@
+
 body {
     background-image: url(./imagem/bg-desktop.jpg);
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
+}
+:root{
+    --text-color: white;
+    --bg-url: url(../imagem/bg-desktop.jpg);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.5);
+    --surface-color-hover: rgba(255, 255, 255, 0.2);
+    --highight-color: rgba(255, 255, 255, 0.2)
+}
+.light{
+    --text-color: black;
+    --bg-url: url(../imagem/bg-desktop-light.jpg);
+    --stroke-color: rgba(o, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --highight-color: rgba(0, 0, 0, 0.2);
+}
+body{
+    background-image: var(--bg-url);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: cover;
+    ;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 
+}
+
+body * {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    color: var(--text-color);
 
 }
 
 #caixa {
-    border: 1px solid red;
+    
     width: 360px;
-    height: 712;
+    height: 712px;
     margin: auto;
+    padding: 0 24px;
+}
+
+#perfil {
+    text-align: center;
+    padding: 24px;
+}
+
+#perfil img {
+    width: 112px;
+    margin: auto;
+    border-radius: 50%;
+
+}
+
+#perfil p {
+    font-family: 500;
+    line-height: 24px;
+    font-size: 18px;
+    margin-top: 8px;
+}
+#switch button {
+    border: 1px solid red;
+    width: 32px;
+    height: 32px;
+    background: white;
+    background-image: url(../imagem/sun.svg);
+    background-repeat: no-repeat;
+}
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 24px;
+    background: var(--surface-color);
+    border-radius: 8px;
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.5;
+
+}
+ul li a:hover {
+    background: var(--surface-color-hover);
+    border: 1.5px var(--text-color);
+   
+
+   
+   
+}
+/*ICONES*/
+#icones{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+    font-size: 24px;
+    padding: 24px;
+}
+#icones a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    transition: background 0.2s;
+    border-radius: 50%;
+   
+}
+#icones a:hover{
+    background: var(--highight-color);
+    padding: 16px;
+   
+}
+footer {
+    padding: 24px;
 }
