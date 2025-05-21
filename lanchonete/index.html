@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+let Menu = parseInt(prompt(" *_Menu_* \n\n Digite o nùmero do seu pedido\n 100: Cachorro Quente - R$ 1.70\n 101: Bauru Simples - R$ 2.30\n 102: Bauru com Ovo - R$ 2.60\n 103: Hamburguer - R$ 2.40\n 104: Cheeseburguer - R$ 2.70\n 105: Refrigerante - R$ 1.00\n\n Digite o número do seu pedido: "));
+let quantidade = parseInt(prompt("Qual a quantidade desejada: "));
+let produtoUnitario;    
+let preçoTotal;
+switch (Menu){
+    case 100:
+        produtoUnitario = "Cachorro Quente";
+        preçoTotal = precoUnitario = 1.70 * quantidade;
+        alert("Você pediu " + quantidade + " " + produtoUnitario + "(s) \n O preço total é: R$ " + preçoTotal.toFixed(2));
+        break;
+    case 101:
+        produtoUnitario = "Bauru Simples";
+        preçoTotal = precoUnitario = 2.30 * quantidade;
+        alert("Você pediu " + quantidade + " " + produtoUnitario + "(s) \n O preço total é: R$ " + preçoTotal.toFixed(2));
+        break;
+    case 102:
+        produtoUnitario = "Bauru com Ovo";
+        preçoTotal = precoUnitario = 2.60 * quantidade;
+        alert("Você pediu " + quantidade + " " + produtoUnitario + "(s) \n O preço total é: R$ " + preçoTotal.toFixed(2));
+        break;
+    case 103:       
+        produtoUnitario = "Hamburguer";
+        preçoTotal = precoUnitario = 2.40 * quantidade;
+        alert("Você pediu " + quantidade + " " + produtoUnitario + "(s) \n O preço total é: R$ " + preçoTotal.toFixed(2));
+        break;
+    case 104:
+        produtoUnitario = "Cheeseburguer";
+        preçoTotal = precoUnitario = 2.70 * quantidade;
+        alert("Você pediu " + quantidade + " " + produtoUnitario + "(s) \n O preço total é: R$ " + preçoTotal.toFixed(2));
+        break;
+    case 105:
+
+        produtoUnitario = "Refrigerante";
+        preçoTotal = precoUnitario = 1.00 * quantidade;
+        alert("Você pediu " + quantidade + " " + produtoUnitario + "(s) \n O preço total é: R$ " + preçoTotal.toFixed(2));
+        break;
+    default:
+        alert("Não temos esse produto no nosso cardápio")
+        break;
+
+}
+alert("Obrigado pela preferência!");
+// Adicionando o preço total ao localStorage    
+
+    </script>
+</body>
+</html>

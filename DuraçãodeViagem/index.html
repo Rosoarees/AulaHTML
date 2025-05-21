@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+// Função principal para organizar o código
+function calcularDuracaoTotalViagem() {
+    // 1. Ler a duração da viagem em dias
+    // Usamos prompt para entrada de dados no navegador.
+    // Se estiver usando Node.js, você precisaria de um módulo como 'readline-sync'.
+    const diasInput = prompt("Informe a quantidade de DIAS da viagem:");
+
+    // 2. Ler a duração da viagem em horas (adicionais aos dias)
+    const horasInput = prompt("Informe a quantidade de HORAS da viagem (além dos dias completos):");
+
+    // Converter as entradas para números inteiros.
+    // parseInt é usado para garantir que estamos lidando com números.
+    const dias = parseInt(diasInput);
+    const horas = parseInt(horasInput);
+
+    // Validação básica das entradas:
+    // Verifica se o que foi digitado é realmente um número (Not-a-Number).
+    if (isNaN(dias) || isNaN(horas)) {
+        const mensagemErro = "Erro: Por favor, insira valores numéricos válidos para dias e horas.";
+        // Exibe a mensagem no console e em um alerta (se no navegador)
+        console.error(mensagemErro);
+        if (typeof alert !== 'undefined') { // Verifica se a função alert existe (navegador)
+            alert(mensagemErro);
+        }
+        return; // Encerra a execução da função se a entrada for inválida
+    }
+
+    // Validação adicional (opcional, mas boa prática):
+    // Verifica se os números são não-negativos.
+    if (dias < 0 || horas < 0) {
+        const mensagemErroNegativo = "Erro: Os valores para dias e horas não podem ser negativos.";
+        console.error(mensagemErroNegativo);
+        if (typeof alert !== 'undefined') {
+            alert(mensagemErroNegativo);
+        }
+        return;
+    }
+
+    // 3. Calcular a duração total da viagem em número de horas.
+    // Cada dia tem 24 horas.
+    // Multiplicamos a quantidade de dias por 24 e somamos as horas adicionais.
+    const totalHorasViagem = (dias * 24) + horas;
+
+    // 4. Informar a duração total da viagem.
+    const mensagemResultado = `--- Duração da Viagem ---
+Dias informados: ${dias}
+Horas informadas: ${horas}
+-----------------------------
+Duração total da viagem: ${totalHorasViagem} horas.`;
+
+    console.log(mensagemResultado);
+    if (typeof alert !== 'undefined') {
+        // A função alert não formata quebras de linha com \n diretamente.
+        // Para melhor visualização no alert, poderíamos substituir \n por algo
+        // ou mostrar de forma mais simples.
+        // Mas para este exemplo, manteremos a consistência com o console.log.
+        // Uma alternativa seria:
+        // alert(`Dias: ${dias}\nHoras: ${horas}\nTotal: ${totalHorasViagem} horas`);
+        alert(mensagemResultado.replace(/---/g, '').replace(/---\n/g,'').trim()); // Remove as linhas de separação para o alert ficar mais limpo
+    }
+}
+
+// Chama a função para iniciar o programa
+calcularDuracaoTotalViagem();
+
+// --- Exemplo de execução mental (como pedido no enunciado) ---
+// Se a entrada for:
+// Dias: 2
+// Horas: 5
+
+// Cálculo:
+// totalHorasViagem = (2 * 24) + 5
+// totalHorasViagem = 48 + 5
+// totalHorasViagem = 53
+
+// Saída esperada:
+// --- Duração da Viagem ---
+// Dias informados: 2
+// Horas informadas: 5
+// -----------------------------
+// Duração total da viagem: 53 horas.
+
+
+
+    </script>
+   
+</body>
+</html>
