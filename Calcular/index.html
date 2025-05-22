@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let resposta = prompt("Digite sim para acessar a calculadora.");
+
+        while (resposta == "sim") {
+            let operador = prompt("Digite o operador desejado: +, -, *, /");
+            let numero1 = parseFloat(prompt("Digite o primeiro número:"));
+            let numero2 = parseFloat(prompt("Digite o segundo número:"));
+            let resultado;
+
+
+
+            switch (operador) {
+                case "+":
+                    resultado = numero1 + numero2;
+                    break;
+                case "-":
+                    resultado = numero1 - numero2;
+                    break;
+                case "*":
+                    resultado = numero1 * numero2;
+                    break;
+                case "/":
+                    resultado = numero1 / numero2;
+                    break;
+                default:
+                    resultado = "Operador inválido";
+            }
+            alert("O resultado é: " + resultado);
+            resposta = prompt("Para continuar, digite sim ou não.");
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
