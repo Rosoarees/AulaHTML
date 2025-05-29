@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function contarVogais() {
+            let frase = prompt("Digite uma frase:");
+            let contador = 0;
+            let vogais = ["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"];
+
+            for (let i = 0; i < frase.length; i++) {
+                if (vogais.indexOf(frase[i]) !== -1) {
+                    contador++;
+                }
+            }
+
+            alert("A frase contém " + contador + " vogais");
+        }
+
+        contarVogais();
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
